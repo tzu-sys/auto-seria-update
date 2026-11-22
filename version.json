@@ -1,7 +1,7 @@
 {
-  "version": "2.2.0",
+  "version": "1.0.0",
   "updated_at": "2026-11-22",
-  "changelog": "Cập nhật tính năng dò Mũi Tên Ô Xanh ải Chinh Phạt, giữ nguyên ải Ngục Tối",
+  "changelog": "Bản phát hành chính thức AutoCOA v1.0 (Crystal of Atlan)",
   "files": [
     "auto_seria_v2_stable.py",
     "item_templates_data.py"

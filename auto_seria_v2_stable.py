@@ -1652,7 +1652,7 @@ class SeriaEngineV2:
 class AutoSeriaV2App:
     def __init__(self, root):
         self.root = root
-        self.root.title("AutoSeria V2 Stable - Bản Ổn Định 100% (Hộp & Chìa)")
+        self.root.title("AutoCOA v1.0 - Tool Tự Động Crystal of Atlan")
         # Giao diện hình chữ nhật đứng gọn gàng, tự đặt lệch phải nếu màn hình đủ rộng để không che game (0,0 -> 1366x768)
         win_w, win_h = 580, 820
         try:
