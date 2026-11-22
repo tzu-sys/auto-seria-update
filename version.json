@@ -1,0 +1,9 @@
+{
+  "version": "2.2.0",
+  "updated_at": "2026-11-22",
+  "changelog": "Cập nhật tính năng dò Mũi Tên Ô Xanh ải Chinh Phạt, giữ nguyên ải Ngục Tối",
+  "files": [
+    "auto_seria_v2_stable.py",
+    "item_templates_data.py"
+  ]
+}
