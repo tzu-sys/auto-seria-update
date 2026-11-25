@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "updated_at": "2026-11-22",
-  "changelog": "Bản phát hành chính thức AutoCOA v1.0 (Crystal of Atlan)",
+  "version": "1.0.1",
+  "updated_at": "2026-11-25",
+  "changelog": "Bản vá sửa lỗi import scrolledtext và tối ưu đi ải Chinh Phạt (Bản 00:27, tự động nhả chuột)",
   "files": [
     "auto_seria_v2_stable.py",
     "item_templates_data.py"

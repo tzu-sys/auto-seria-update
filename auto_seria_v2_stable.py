@@ -19,7 +19,8 @@ import base64
 import ctypes
 import threading
 import tkinter as tk
-from tkinter import ttk, messagebox, scrolledtext
+from tkinter import ttk, messagebox
+import tkinter.scrolledtext as scrolledtext
 
 # BẬT CHẾ ĐỘ DPI AWARENESS CHO WINDOWS (CHỐNG GIẬT LAG KHI KÉO CỬA SỔ TOOL)
 try:
@@ -347,6 +348,12 @@ class SeriaEngineV2:
         self.check_hotkeys()
         self.force_foreground()
 
+        # Cưỡng chế nhả chuột trước khi click để chống kẹt chuột ảo
+        try:
+            win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0, 0, 0)
+        except Exception:
+            pass
+
         # 1. Đưa con trỏ tới đúng tọa độ
         win32api.SetCursorPos((x, y))
         pydirectinput.moveTo(x, y)
@@ -384,6 +391,10 @@ class SeriaEngineV2:
         """Spam click liên tục dứt khoát tại 1 tọa độ."""
         self.check_hotkeys()
         self.force_foreground()
+        try:
+            win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0, 0, 0)
+        except Exception:
+            pass
         win32api.SetCursorPos((x, y))
         pydirectinput.moveTo(x, y)
         time.sleep(0.15)
@@ -1025,12 +1036,9 @@ class SeriaEngineV2:
             self.check_hotkeys()
             self.press_key('p', hold=0.07, delay=0.15)
 
-        # 1. Đi thẳng bằng W 2s
-        self.log("-> Đi thẳng bằng W 2.0s tiếp cận sảnh đấu...")
-        self.move_forward(seconds=2.0)
-
-        # 2. Sau đó quét tìm Mũi Tên Ô Xanh và bước vào ô
-        self.step_into_portal()
+        # Di chuyển thẳng khoảng 6s rồi ngừng chạy theo yêu cầu (Bản 00:27 ổn định)
+        self.log("-> Đang trong ải: Di chuyển thẳng (giữ W ~6s) & bấm P bỏ qua cutscene...")
+        self.move_forward_continuous(seconds=6.0, press_p_interval=0.75)
 
         # Kéo dài thời gian chờ đồng đội / Bot hạ Boss dứt điểm (chờ 24s)
         self.log("-> Đang trong ải: Dừng chạy, chờ đồng đội / Bot hạ gục Boss (24s)...")
