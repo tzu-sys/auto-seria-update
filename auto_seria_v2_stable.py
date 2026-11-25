@@ -783,8 +783,10 @@ class SeriaEngineV2:
 
     def open_char_select_from_dungeon(self):
         self.force_foreground()
-        self.press_esc(delay=1.4)
-        self.click_coord("btn_cai_dat_gear", delay=1.6, move_wait=0.20)
+        self.press_esc(delay=2.0)
+        self.log("-> Đợi thêm 1.0s ổn định bảng Menu...")
+        time.sleep(1.0)
+        self.click_coord("btn_cai_dat_gear", delay=1.8, move_wait=0.25)
         self.click_coord("btn_doi_nhan_vat", delay=4.8, move_wait=0.24)
 
     # --------------------------------------------------------------------------

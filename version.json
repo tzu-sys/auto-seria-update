@@ -1,7 +1,7 @@
 {
-  "version": "1.0.1",
-  "updated_at": "2026-11-25",
-  "changelog": "Bản vá sửa lỗi import scrolledtext và tối ưu đi ải Chinh Phạt (Bản 00:27, tự động nhả chuột)",
+  "version": "1.0.2",
+  "updated_at": "2026-11-26",
+  "changelog": "Tối ưu độ trễ phím ESC (chờ 2s + 1s) khi mở Menu thoát ải, chống bấm hụt bánh răng",
   "files": [
     "auto_seria_v2_stable.py",
     "item_templates_data.py"
